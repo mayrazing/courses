@@ -16,12 +16,12 @@ describe("Falling blocks", () => {
     );
   });
 
-  /*
+  
   describe("When a block is dropped", () => {
     beforeEach(() => {
       board.drop("X");
     });
-
+    
     test("it starts from the top middle", () => {
       expect(board.toString()).to.equalShape(
         `.X.
@@ -29,7 +29,7 @@ describe("Falling blocks", () => {
          ...`
       );
     });
-
+    /*
     test.skip("it moves down one row per tick", () => {
       board.tick();
 
@@ -46,8 +46,8 @@ describe("Falling blocks", () => {
       const after = board.toString();
       expect(after).to.equal(before);
     });
+    */
   });
-  */
 
   /*
   describe("When a block reaches the bottom", () => {
