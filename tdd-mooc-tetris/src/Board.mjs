@@ -48,6 +48,11 @@ export class Board {
   }
 
   tick() {
-    this.fallingBlockRow++;
+    if (this.fallingBlockRow == this.height - 1) {
+      this.stationaryBlocks[this.fallingBlockRow][1] = this.fallingBlock;
+      this.fallingBlock = null;
+    } else {
+      this.fallingBlockRow++;
+    }
   }
 }
