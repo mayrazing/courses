@@ -28,6 +28,9 @@ export class Board {
   }
 
   drop(block) {
+    if (this.hasFalling) {
+      throw new Error("There is a already falling block");
+    }
     this.hasFalling = true;
     this.fallingBlock = block;
   }
