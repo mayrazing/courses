@@ -6,8 +6,8 @@ export class Board {
   stationaryBlocks = [];
 
   fallingBlock = null;
-  fallingBlockRow = 0;
-  fallingBlockCol = 1;
+  fallingBlockRow;
+  fallingBlockCol;
 
   constructor(width, height) {
     this.width = width;
@@ -46,6 +46,8 @@ export class Board {
       throw new Error("There is a already falling block");
     }
     this.fallingBlock = block;
+    this.fallingBlockRow = 0;
+    this.fallingBlockCol = 1;
   }
 
   tick() {
