@@ -45,20 +45,22 @@ export class Board {
     if (this.hasFalling()) {
       throw new Error("There is a already falling block");
     }
+    this.startFalling(block);
+  }
+
+  startFalling(block) {
     this.fallingBlock = block;
     this.fallingBlockRow = 0;
     this.fallingBlockCol = 1;
   }
 
   tick() {
-    if (this.fallingBlockRow == this.height - 1) {
+    const isAtBottom = this.fallingBlockRow == this.height - 1;
+    const isBlockBelow = !isAtBottom && this.stationaryBlocks[this.fallingBlockRow + 1][this.fallingBlockCol] != this.EMPTY;
+    if (isAtBottom || isBlockBelow) {
       this.stopFalling();
-    } else {
-      if (this.stationaryBlocks[this.fallingBlockRow + 1][this.fallingBlockCol] == this.EMPTY) {
-        this.fallingBlockRow++;
-      } else {
-        this.stopFalling();
-      } 
+    } else if (!isAtBottom) {
+      this.fallingBlockRow++;
     }
   }
 
