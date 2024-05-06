@@ -54,7 +54,11 @@ export class Board {
     if (this.fallingBlockRow == this.height - 1) {
       this.stopFalling();
     } else {
-      this.fallingBlockRow++;
+      if (this.stationaryBlocks[this.fallingBlockRow + 1][this.fallingBlockCol] == this.EMPTY) {
+        this.fallingBlockRow++;
+      } else {
+        this.stopFalling();
+      } 
     }
   }
 
