@@ -3,6 +3,7 @@ export class Board {
 
   width;
   height;
+  stationaryBlocks = [];
   hasFalling = false;
   fallingBlock = null;
   fallingBlockRow = 0;
@@ -10,17 +11,25 @@ export class Board {
   constructor(width, height) {
     this.width = width;
     this.height = height;
+    this.stationaryBlocks = Array.from({ length: height }, () => Array.from({ length: width }, () => this.EMPTY));
   }
 
   toString() {
     let s = "";
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
-        s += this.hasFallingAt(i, j) ? this.fallingBlock : this.EMPTY;
+        s += this.getBlockAt(i, j);
       }
       s += "\n";
     }
     return s;
+  }
+
+  getBlockAt(row, col) {
+    if (this.hasFallingAt(row, col)) {
+      return this.fallingBlock;
+    }
+    return this.stationaryBlocks[row][col];
   }
 
   hasFallingAt(row, col) {
