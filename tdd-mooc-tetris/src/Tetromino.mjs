@@ -7,6 +7,7 @@ export class Tetromino {
 
     shape;
     orientationShapes = [];
+    currentOrientation;
 
     constructor(s, orientationCount=0) {
         this.shape = RotatingShape.fromString(s);
@@ -16,23 +17,25 @@ export class Tetromino {
                 this.orientationShapes[i] = this.orientationShapes[i-1].rotateRight();
             }
         }
+        this.currentOrientation = 0;
     }
 
     toString() {
-        return this.shape.toString();
+        return this.orientationShapes[this.currentOrientation].toString();
     }
 
     rotateRight() {
-        return this.getRotatingTetromino(this.shape.rotateRight(), this.orientationShapes);
+        return this.getRotatingTetromino(this.shape.rotateRight(), this.orientationShapes, this.currentOrientation + 1);
     }
 
     rotateLeft() {
-        return this.getRotatingTetromino(this.shape.rotateLeft(), this.orientationShapes);
+        return this.getRotatingTetromino(this.shape.rotateLeft(), this.orientationShapes, this.currentOrientation - 1);
     }
 
-    getRotatingTetromino(shape, orientations) {
+    getRotatingTetromino(shape, orientations, current) {
         let tetromino = new Tetromino(shape.toString());
         tetromino.orientationShapes = orientations;
+        tetromino.currentOrientation = (current + orientations.length) % orientations.length;
         return tetromino;
     }
 }
