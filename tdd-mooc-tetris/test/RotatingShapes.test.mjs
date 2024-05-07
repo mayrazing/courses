@@ -34,7 +34,6 @@ describe("Rotating 3x3 shape", () => {
   });
 });
 
-/*
 describe("Rotating 5x5 shape", () => {
   const shape = RotatingShape.fromString(
     `ABCDE
@@ -53,7 +52,7 @@ describe("Rotating 5x5 shape", () => {
        UVWXY`
     );
   });
-
+  /*
   test.skip("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
       `UPKFA
@@ -73,5 +72,5 @@ describe("Rotating 5x5 shape", () => {
        AFKPU`
     );
   });
+  */
 });
-*/

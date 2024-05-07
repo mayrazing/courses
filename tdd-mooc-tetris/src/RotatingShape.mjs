@@ -15,8 +15,8 @@ export class RotatingShape {
 
     toString() {
         let s = "";
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
+        for (let i = 0; i < this.blocks.length; i++) {
+            for (let j = 0; j < this.blocks[i].length; j++) {
                 s += this.blocks[i][j];
             }
             s += "\n";
