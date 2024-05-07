@@ -23,12 +23,13 @@ export class RotatingShape {
         }
         return s;
     }
+
     rotateRight() {
         let rotatedBlocks = [];
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
+        for (let i = 0; i < this.blocks.length; i++) {
+            for (let j = 0; j < this.blocks[i].length; j++) {
                 if (!rotatedBlocks[j]) rotatedBlocks[j] = []
-                rotatedBlocks[j][2 - i] = this.blocks[i][j];
+                rotatedBlocks[j][this.blocks.length - i -1] = this.blocks[i][j];
             }
         }
         return new RotatingShape(rotatedBlocks);
