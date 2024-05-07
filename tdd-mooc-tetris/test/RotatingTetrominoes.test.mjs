@@ -1,4 +1,3 @@
-/*
 import { describe, test } from "vitest";
 import { expect } from "chai";
 import { Tetromino } from "../src/Tetromino.mjs";
@@ -26,7 +25,7 @@ describe("The T shape", () => {
        ...`
     );
   });
-
+  /*
   test.skip("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
       `.T.
@@ -46,8 +45,8 @@ describe("The T shape", () => {
   test.skip("has 4 distinct orientations", () => {
     expect(distinctOrientations(shape).size).to.equal(4);
   });
+  */
 });
-*/
 
 /*
 describe("The I shape", () => {
