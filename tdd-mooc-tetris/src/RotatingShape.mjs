@@ -1,8 +1,13 @@
 export class RotatingShape {
     blocks;
+    dimension;
 
     constructor(blocks) {
         this.blocks = blocks;
+        for (let i = 0; i < blocks.length; i++) {
+            if (blocks[i].length != blocks.length) throw new Error("Shape must be square")
+        }
+        this.dimension = blocks.length;
     }
 
     static fromString(shape) {
@@ -15,8 +20,8 @@ export class RotatingShape {
 
     toString() {
         let s = "";
-        for (let i = 0; i < this.blocks.length; i++) {
-            for (let j = 0; j < this.blocks[i].length; j++) {
+        for (let i = 0; i < this.dimension; i++) {
+            for (let j = 0; j < this.dimension; j++) {
                 s += this.blocks[i][j];
             }
             s += "\n";
@@ -26,10 +31,10 @@ export class RotatingShape {
 
     rotateRight() {
         let rotatedBlocks = [];
-        for (let i = 0; i < this.blocks.length; i++) {
-            for (let j = 0; j < this.blocks[i].length; j++) {
+        for (let i = 0; i < this.dimension; i++) {
+            for (let j = 0; j < this.dimension; j++) {
                 if (!rotatedBlocks[j]) rotatedBlocks[j] = []
-                rotatedBlocks[j][this.blocks.length - i -1] = this.blocks[i][j];
+                rotatedBlocks[j][this.dimension - i -1] = this.blocks[i][j];
             }
         }
         return new RotatingShape(rotatedBlocks);
