@@ -1,23 +1,23 @@
 export class RotatingShape {
-    shape;
+    blocks;
 
-    constructor(shape) {
-        this.shape = shape;
+    constructor(blocks) {
+        this.blocks = blocks;
     }
 
     static fromString(shape) {
-        return new RotatingShape(shape);
+        let rows = [];
+        let blocks = [];
+        rows = shape.split("\n");
+        blocks = rows.map(row => row.trim().split(""));
+        return new RotatingShape(blocks);
     }
 
     toString() {
         let s = "";
-        let rows = [];
-        let blocks = [];
-        rows = this.shape.split("\n");
-        blocks = rows.map(row => row.trim().split(""));
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-                s += blocks[i][j];
+                s += this.blocks[i][j];
             }
             s += "\n";
         }
