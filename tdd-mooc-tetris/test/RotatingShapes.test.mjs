@@ -1,4 +1,3 @@
-/*
 import { describe, test } from "vitest";
 import { expect } from "chai";
 import { RotatingShape } from "../src/RotatingShape.mjs";
@@ -9,7 +8,7 @@ describe("Rotating 3x3 shape", () => {
      DEF
      GHI`
   );
-
+  /*
   test("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `ABC
@@ -33,8 +32,8 @@ describe("Rotating 3x3 shape", () => {
        ADG`
     );
   });
+  */
 });
-*/
 
 /*
 describe("Rotating 5x5 shape", () => {
