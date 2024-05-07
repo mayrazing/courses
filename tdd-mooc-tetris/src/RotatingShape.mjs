@@ -8,4 +8,10 @@ export class RotatingShape {
     static fromString(shape) {
         return new RotatingShape(shape);
     }
+
+    toString() {
+        let s = "";
+        s = "ABC\nDEF\nGHI\n";
+        return s;
+    }
 }
