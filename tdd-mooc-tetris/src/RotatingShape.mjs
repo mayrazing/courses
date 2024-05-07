@@ -16,7 +16,7 @@ export class RotatingShape extends Grid{
     static fromString(shape) {
         let rows = [];
         let blocks = [];
-        rows = shape.split("\n");
+        rows = shape.trim().split("\n");
         blocks = rows.map(row => row.trim().split(""));
         return new RotatingShape(blocks);
     }
