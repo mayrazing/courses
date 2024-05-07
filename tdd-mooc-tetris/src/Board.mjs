@@ -26,6 +26,10 @@ export class Board extends Grid {
     return this.height;
   }
 
+  columns() {
+    return this.width;
+  }
+
   getBlockAt(row, col) {
     if (this.hasFallingAt(row, col)) {
       return this.fallingBlock;
