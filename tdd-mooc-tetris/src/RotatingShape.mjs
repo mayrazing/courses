@@ -22,11 +22,15 @@ export class RotatingShape {
         let s = "";
         for (let i = 0; i < this.dimension; i++) {
             for (let j = 0; j < this.dimension; j++) {
-                s += this.blocks[i][j];
+                s += this.getBlockAt(i, j);
             }
             s += "\n";
         }
         return s;
+    }
+
+    getBlockAt(row, col) {
+        return this.blocks[row][col];
     }
 
     rotateRight() {
