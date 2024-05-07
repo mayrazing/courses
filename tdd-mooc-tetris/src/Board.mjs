@@ -1,4 +1,6 @@
-export class Board {
+import { Grid } from "./Grid.mjs";
+
+export class Board extends Grid {
   EMPTY = ".";
 
   width;
@@ -10,20 +12,14 @@ export class Board {
   fallingBlockCol;
 
   constructor(width, height) {
+    super();
     this.width = width;
     this.height = height;
     this.stationaryBlocks = Array.from({ length: height }, () => Array.from({ length: width }, () => this.EMPTY));
   }
 
   toString() {
-    let s = "";
-    for (let i = 0; i < this.height; i++) {
-      for (let j = 0; j < this.width; j++) {
-        s += this.getBlockAt(i, j);
-      }
-      s += "\n";
-    }
-    return s;
+    return Grid.toString(this);
   }
 
   getBlockAt(row, col) {
