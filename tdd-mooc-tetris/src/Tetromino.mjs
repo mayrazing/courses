@@ -23,10 +23,16 @@ export class Tetromino {
     }
 
     rotateRight() {
-        return new Tetromino(this.shape.rotateRight().toString());
+        return this.getRotatingTetromino(this.shape.rotateRight(), this.orientationShapes);
     }
 
     rotateLeft() {
-        return new Tetromino(this.shape.rotateLeft().toString());
+        return this.getRotatingTetromino(this.shape.rotateLeft(), this.orientationShapes);
+    }
+
+    getRotatingTetromino(shape, orientations) {
+        let tetromino = new Tetromino(shape.toString());
+        tetromino.orientationShapes = orientations;
+        return tetromino;
     }
 }
