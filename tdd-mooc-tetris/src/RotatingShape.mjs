@@ -1,8 +1,11 @@
-export class RotatingShape {
+import { Grid } from "./Grid.mjs";
+
+export class RotatingShape extends Grid{
     blocks;
     dimension;
 
     constructor(blocks) {
+        super();
         this.blocks = blocks;
         for (let i = 0; i < blocks.length; i++) {
             if (blocks[i].length != blocks.length) throw new Error("Shape must be square")
@@ -19,14 +22,7 @@ export class RotatingShape {
     }
 
     toString() {
-        let s = "";
-        for (let i = 0; i < this.rows(); i++) {
-            for (let j = 0; j < this.columns(); j++) {
-                s += this.getBlockAt(i, j);
-            }
-            s += "\n";
-        }
-        return s;
+        return Grid.toString(this);
     }
 
     rows() {
