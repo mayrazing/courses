@@ -4,6 +4,7 @@ export class Tetromino {
 
     static T_SHAPE = new Tetromino(".T.\nTTT\n...\n", 4);
     static I_SHAPE = new Tetromino(".....\n.....\nIIII.\n.....\n.....\n", 2);
+    static O_SHAPE = new Tetromino(".OO\n.OO\n...\n", 4);
 
     orientationShapes = [];
     currentOrientation;

@@ -85,7 +85,6 @@ describe("The I shape", () => {
   });
 });
 
-/*
 describe("The O shape", () => {
   const shape = Tetromino.O_SHAPE;
 
@@ -96,7 +95,7 @@ describe("The O shape", () => {
        ...`
     );
   });
-
+  /*
   test.skip("cannot be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
       `.OO
@@ -116,5 +115,5 @@ describe("The O shape", () => {
   test.skip("has 1 distinct orientations", () => {
     expect(distinctOrientations(shape).size).to.equal(1);
   });
+  */
 });
-*/
