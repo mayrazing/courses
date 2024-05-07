@@ -20,13 +20,21 @@ export class RotatingShape {
 
     toString() {
         let s = "";
-        for (let i = 0; i < this.dimension; i++) {
-            for (let j = 0; j < this.dimension; j++) {
+        for (let i = 0; i < this.rows(); i++) {
+            for (let j = 0; j < this.columns(); j++) {
                 s += this.getBlockAt(i, j);
             }
             s += "\n";
         }
         return s;
+    }
+
+    rows() {
+        return this.dimension;
+    }
+
+    columns() {
+        return this.dimension;
     }
 
     getBlockAt(row, col) {
